@@ -1048,7 +1048,8 @@ public class SwipeLayout extends FrameLayout {
             try {
                 Method m = AbsListView.class.getDeclaredMethod("performLongPress", View.class, int.class, long.class);
                 m.setAccessible(true);
-                handled = (boolean) m.invoke(view, SwipeLayout.this, p, vId);
+                Boolean onj = (Boolean) m.invoke(view, SwipeLayout.this, p, vId);
+                handled = onj.booleanValue();
 
             } catch (Exception e) {
                 e.printStackTrace();
